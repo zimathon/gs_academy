@@ -12,6 +12,8 @@ def whoami(what):
         count +=1
     print("end {} Process {}".format(what,os.getpid()))
 
-for n in range(10):
-    p = multiprocessing.Process(target=whoami,args=("Process {}".format(n),))
-    p.start()
+
+if __name__ == '__main__':    
+    for n in range(10):
+        p = multiprocessing.Process(target=whoami,args=("Process {}".format(n),))
+        p.start()
